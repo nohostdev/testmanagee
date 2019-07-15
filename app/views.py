@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'app/home.html')
+    return render(request, 'index.html')
 
 def register(request):
-    return render(request,'app/register.html')
+    return render(request,'register.html')
