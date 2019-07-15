@@ -12,6 +12,7 @@ class TestCase(models.Model):
     description = models.TextField()
     preconditions = models.TextField()
     status = models.CharField(max_length=20, choices=TEST_CASES_STATUSES, default='new')
+    project_id = models.ForeignKey("Project", to_field='id', on_delete=models.DO_NOTHING)
     #stab for comments
 
 
