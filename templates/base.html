@@ -13,18 +13,24 @@
               <a class="navbar-brand" href="#">TestManagee</a>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    {% block login %}
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Username <span class="sr-only">(current)</span></a>
                   </li>
+                    {% endblock %}
+                    {% block logout %}
                   <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
                   </li>
+                    {% endblock %}
                 </ul>
               </div>
             </nav>
         </div>
         <div class="row">
+            {% block left_menu %}
             <div class="col-2">Left menu</div>
+            {% endblock %}
             {% block content %}
             {% endblock %}
         </div>
