@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="col-9">
+                {% for project in projects %}
+                    <div class="jumbotron">
+                        <h1 class="display-4">{{ project.title }}</h1>
+                        <p class="lead">{{ project.description }}</p>
+                        <hr class="my-4">
+                        <p>Responsible: {{project.responsible}}</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+{% endblock %}
