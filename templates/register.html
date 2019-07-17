@@ -1,5 +1,12 @@
 {% extends "base.html" %}
+{%block login%}
+{%endblock login%}
+{%block logout%}
+{%endblock logout%}
+{%block left_menu%}
+{%endblock left_menu%}
 {% block content %}
+<div class="container">
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}
@@ -17,4 +24,5 @@
             </small>
         </div>
     </div>
+</div>
 {% endblock content %}

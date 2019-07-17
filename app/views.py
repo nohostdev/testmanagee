@@ -1,10 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from .models import Project
 from .forms import UserRegisterForm
 
-
+@login_required
 def home(request):
     projects = Project.objects.all()
     context = {'projects':projects}
@@ -17,7 +19,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, 'Account created for {username}!')
-            return redirect('home')
+            return redirect('index')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
