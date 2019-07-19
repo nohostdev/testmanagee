@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
             <div class="col-9">
+                  {% csrf_token %}
                 {% for project in projects %}
                     <div class="jumbotron">
                         <h1 class="display-4">{{ project.title }}</h1>
@@ -13,4 +14,4 @@
                     </div>
                 {% endfor %}
             </div>
-{% endblock %}
+{% endblock %} 
